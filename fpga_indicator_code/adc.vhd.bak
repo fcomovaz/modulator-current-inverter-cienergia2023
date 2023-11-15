@@ -1,0 +1,58 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY adc IS
+    PORT (
+        clk : IN STD_LOGIC;
+        rst : IN STD_LOGIC;
+
+        consvst : OUT STD_LOGIC;
+        scl : OUT STD_LOGIC;
+        sdi : OUT STD_LOGIC;
+        sdo : IN STD_LOGIC;
+
+        adc_val : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    );
+END ENTITY adc;
+
+ARCHITECTURE main OF adc IS
+
+    COMPONENT adcip IS
+        PORT (
+            CLOCK : IN STD_LOGIC := '0'; --                clk.clk
+            ADC_SCLK : OUT STD_LOGIC; -- external_interface.SCLK
+            ADC_CS_N : OUT STD_LOGIC; --                   .CS_N
+            ADC_DOUT : IN STD_LOGIC := '0'; --                   .DOUT
+            ADC_DIN : OUT STD_LOGIC; --                   .DIN
+            CH0 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --           readings.CH0
+            CH1 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH1
+            CH2 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH2
+            CH3 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH3
+            CH4 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH4
+            CH5 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH5
+            CH6 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH6
+            CH7 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); --                   .CH7
+            RESET : IN STD_LOGIC := '0' --              reset.reset
+        );
+    END COMPONENT;
+
+BEGIN
+
+uu0: adcip PORT MAP (
+    CLOCK => clk,
+    ADC_SCLK => scl,
+    ADC_CS_N => consvst,
+    ADC_DOUT => sdo,
+    ADC_DIN => sdi,
+    CH0 => adc_val,
+    CH1 => open,
+    CH2 => open,
+    CH3 => open,
+    CH4 => open,
+    CH5 => open,
+    CH6 => open,
+    CH7 => open,
+    RESET => not rst
+);
+END main;

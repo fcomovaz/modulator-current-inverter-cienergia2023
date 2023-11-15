@@ -1,0 +1,30 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\paco_\Desktop\adc\adcip.qsys --block-symbol-file --output-directory=C:\Users\paco_\Desktop\adc\adcip --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading adc/adcip.qsys
+Progress: Reading input file
+Progress: Adding adc_mega_0 [altera_up_avalon_adc_mega 17.1]
+Progress: Parameterizing module adc_mega_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\paco_\Desktop\adc\adcip.qsys --synthesis=VHDL --output-directory=C:\Users\paco_\Desktop\adc\adcip\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading adc/adcip.qsys
+Progress: Reading input file
+Progress: Adding adc_mega_0 [altera_up_avalon_adc_mega 17.1]
+Progress: Parameterizing module adc_mega_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: adcip: Generating adcip "adcip" for QUARTUS_SYNTH
+Info: adc_mega_0: Starting Generation of ADC Controller for DE-series Board
+Info: adc_mega_0: C:/intelfpga_lite/17.1/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v C:/Users/paco_/AppData/Local/Temp/alt9529_6155056358506521454.dir/0002_sopcgen/adcip_adc_mega_0.v
+Info: adc_mega_0: "adcip" instantiated altera_up_avalon_adc_mega "adc_mega_0"
+Info: adcip: Done "adcip" with 2 modules, 3 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
